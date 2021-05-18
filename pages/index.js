@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import LocationClass from '../components/Location'
 import config, { server } from '../config'
-
 import Diapo from '../components/diapo'
 import Ville from '../components/ville'
 import {gql} from 'graphql-request'
