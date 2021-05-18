@@ -1,0 +1,93 @@
+.Diapo {
+    height: 80vh;
+    position: relative;
+
+    .BackgroundImg {
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+    .cover {
+        position: absolute;
+        // background-color: rgba(0, 0, 0, 0.404);
+        width: 100%;
+        height: 100%;
+    }
+
+    .desc {
+        position : absolute;
+        z-index: 100;
+
+        .text {
+            color: white;
+
+            .title {
+                font-size: 48px;
+                font-weight: 600;
+            }
+            p {
+                margin-top: 18px;
+                font-size: 24px;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 900px ){
+    .Diapo {
+        height: 70vh;
+        position: relative;
+    
+        .BackgroundImg {
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            width: 100%;
+    
+            img {
+                width: 260%;
+            }
+        }
+        .cover {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.404);
+            width: 100%;
+            height: 100%;
+        }
+    
+        .desc {
+            position : absolute;
+            z-index: 100;
+    
+            .text {
+                color: white;
+                display: flex;
+                flex-direction: column;
+                padding: 16px;
+
+    
+                .title {
+                    width: 90vw;
+                    font-size: 30px;
+                    font-weight: 600;
+                }
+                p {
+                    margin-top: 18px;
+                    font-size: 16px;
+                }
+    
+            }
+        }
+    }
+    
+}

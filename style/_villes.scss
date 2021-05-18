@@ -1,0 +1,39 @@
+.villes {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.ville{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+
+    .imgs {
+        display: flex;
+        align-items: center;
+        width: 60px ;
+        height: 60px;
+        border-radius: 16px;
+        overflow: hidden;
+        justify-content: center;
+        margin-right: 24px;
+
+        img {
+            width: 90px;
+        }
+    }
+
+    .p {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width:316px) and (max-width:900px){
+    .villes {
+        display: none;
+    }
+}

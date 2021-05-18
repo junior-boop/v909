@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    line-height: normal;
+    font-size: 12px;
+    font-family: Montserrat;
+    padding: 0; margin : 0;
+}
+
+
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width : 1280px;
+    // border: 0.5px solid black;
+}
+
+@media screen and (min-width : 900px) and (max-width : 1280px){
+    .container {
+        display: flex;
+        flex-direction: column;
+        width : 80%;
+        // border: 0.5px solid black;
+    }
+}
+
+.alertCovid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(49, 49, 49);
+    padding: 24px;
+    margin-bottom: 12px;
+
+    p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width : 900px){
+    .container {
+        display: flex;
+        flex-direction: column;
+        width : 100%;
+        // border: 0.5px solid black;
+    }
+}
+
+.container_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    display: flex;
+    width : 72px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 72px;
+        opacity: 0.7;
+    }
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 18px;
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 18px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-2-phone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 18px;
+}
+
+.grid-2-bis {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-gap: 10px;
+}
+
+
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.Title {
+    width: auto;
+    padding: 20px 0;
+    p{
+        font-size: 36px;
+        text-transform: capitalize;
+        font-weight: 700
+    }
+}
+
+.btn {
+    margin-left: 36px;
+
+    a {
+        padding: 9px 15px ;
+        font-weight: 600;
+        opacity: 0.9;
+        text-decoration: none;
+    }
+}
+
+.LocationVue {
+    padding: 14px 0px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-gap: 10px;
+}
+
+@media screen and (max-width : 900px){
+    .container_title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 56px;
+    }
+    .LocationVue {
+        padding: 14px;
+        display: block;
+    }
+    .Title {
+        width: auto;
+        padding: 12px 16px;
+        p{
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+    .btn {
+        margin-left: 0px;
+        padding: 0 16px;
+        a {
+            font-size: 0.9rem;
+            padding: 9px 12px ;
+        }
+    }
+
+    .grid-2-phone {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .grid-5 {
+        display: grid;
+        grid-template-columns: repeat(5, 160px);
+        grid-gap: 12px;
+        width: auto;
+        height: auto;
+        padding: 0 14px;
+    }
+}
+
+::-webkit-scrollbar {
+    position: fixed;
+    width: 10px;
+    height: 8px;
+    background-color: rgba(219, 219, 219, 0.452); /* or add it to the track */
+  }
+  
+  /* Add a thumb */
+::-webkit-scrollbar-thumb {
+      background: rgb(48, 48, 48);
+}
+
+.article {
+    padding: 20px 0
+}
+
+
+.aliceblue {
+    background-color: aliceblue;
+}
+
+.bleu {
+    background-color: rgb(0, 119, 255)
+
+}
+
+.footerPhone {
+    display: none;
+    flex-direction: column-reverse;
+    margin-top: 24px;
+}
+
+.vide {
+    height: 64px;
+    width: 100%;
+}
+
+@media screen and (max-width : 900px){
+    .vide {
+        height: 56px;
+    }
+    .footer {
+        display: none;
+        background-color: red;
+    }
+    .footerPhone {
+        flex-direction: column-reverse;
+        margin-top: 24px;
+    }
+    
+}
+
+@import 'diapo';
+@import 'nav';
+@import 'item';
+@import 'btn_vendeur';
+@import 'headerPage';
+@import 'galleries';
+@import 'locationItems';
+@import 'villes';
+@import 'rent';

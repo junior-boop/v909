@@ -1,0 +1,267 @@
+.rentItem {
+    border: 1px solid rgb(233, 233, 233);
+    padding: 16px ;
+
+    a {
+        text-decoration: none;
+        color:rgb(41, 41, 41) ;
+    }
+    .grid-2-bis {
+        .label {
+            margin-bottom: 12px;
+            p{
+                font-size: 24px;
+                font-weight: 600;
+                color: rgb(41, 41, 41);
+            }
+            .prix {
+                color : #ff3e3e;
+            }
+        }
+        .image {
+            display: block;
+
+            .img {
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                height: 70%;
+                width: 100%;
+                border-radius: 12px;
+
+                img {
+                    width: 70%;
+                }
+            }
+            .reserv {
+                width: 100%;
+                a {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    padding: 9px ;
+                    color:rgb(6, 88, 54);
+                    border-radius: 9px;
+                    font-size: 13px;
+                    margin-top: 12px;
+                    font-weight: 500;
+                    background-color: #42f19a;
+                }
+            }
+        }
+    }
+}
+
+form {
+    width: 100%;
+    height: 100%;
+
+}
+
+.date {
+    display: block;
+    height: 100%;
+    padding: 20px;
+    background-color: #3d3d3d;
+    
+    label {
+        font-size: 2.3rem; 
+        font-weight: 800;
+        color: white;
+    }
+
+    .periode {
+        display: flex;
+
+        input {
+            margin-top: 12px;
+            height: 35px;
+            width: 50%;
+            padding: 5px;
+        }
+
+        input + input {
+            margin-left : 20px;
+        }
+    }
+}
+
+.card {
+    display: block;
+    border: 1px solid  rgb(233, 233, 233);
+    width : 70%;
+    padding: 14px;
+    .cT {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .formItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+
+        label {
+            margin-right: 12px;
+            font-size: 13px;
+        }
+        input {
+            width: 18px;
+            height: 18px;
+        }
+    }
+    .plus {
+        display: block;
+        padding: 14px;
+        background-color: rgb(243, 243, 243);
+        margin-bottom:12px ;
+        margin-top: 10px;
+    }
+    .label {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .prix {
+        font-size: 16px;
+        font-weight: 400;
+        color: #ff3e3e;
+    }
+    .reserv {
+        width: 100%;
+        a {
+            display: block;
+            width: 90%;
+            text-align: center;
+            padding: 9px ;
+            color:rgb(6, 88, 54);
+            border-radius: 0px;
+            font-size: 13px;
+            margin-top: 12px;
+            font-weight: 500;
+            background-color: #42f19a;
+        }
+    }
+}
+.phon + .phon {
+    margin-top: 14px;
+}
+
+@media screen and (max-width : 900px){
+    html ::-webkit-scrollbar {
+        display: none;
+    }
+    .rentItem {
+        .grid-2-bis {
+            .label {
+                margin-bottom: 12px;
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: rgb(41, 41, 41);
+                }
+                .prix {
+                    color : #ff3e3e;
+                }
+            }
+            .image {
+                display: block;
+    
+                .img {
+                    display: flex;
+                    overflow: hidden;
+                    align-items: center;
+                    justify-content: center;
+                    height: 70%;
+                    width: 100%;
+    
+                    img {
+                        width: 80%;
+                    }
+                }
+                .reserv {
+                    width: 100%;
+                    a {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        padding: 9px ;
+                        color:rgb(6, 88, 54);
+                        border-radius: 9px;
+                        font-size: 13px;
+                        margin-top: 12px;
+                        font-weight: 500;
+                        background-color: #42f19a;
+                    }
+                }
+            }
+        }
+    }
+    
+    .date {
+        display: block;
+        margin-top: 12px;
+        height: 100%;
+        width: 100%;
+        
+        label {
+            font-size: 1.5rem; 
+            font-weight: 800;
+            color: white;
+        }
+
+        .periode {
+            display: flex;
+    
+            input {
+                height: 30px;
+            }
+    
+            input + input {
+                margin-left : 12px;
+            }
+        }
+    }
+    .card {
+        display: block;
+        border: 1px solid  rgb(233, 233, 233);
+        width : 100%;
+        padding: 14px;
+        .cT {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .formItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+    
+            label {
+                margin-right: 12px;
+                font-size: 13px;
+            }
+            input {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .plus {
+            display: block;
+            padding: 14px;
+            background-color: rgb(243, 243, 243);
+            margin-bottom:12px ;
+            margin-top: 0;
+        }
+    }
+    .phon {
+        display: block;
+        padding: 0 14px;
+    }
+    .phon + .phon {
+        margin-top: 14px;
+    }
+}
