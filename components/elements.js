@@ -69,15 +69,7 @@ export function Rent({name, ans, img, width, height, prix, essence, bv, ville, p
 }
 
 
-export function Rent_2({title, img, prix, essence, bv, ville}){
-    const Title = () => {
-        let t = `${title}`
-        if(t.length > 64){
-            return `${t.slice(0, 64)}...`
-        } else {
-            return title
-        }
-    }
+export function Rent_2({title, img, prix, essence, bv, ville, places, portes, clim}){
 
     const BV = () => {
         if(bv === 'automatique' || bv === 'auto' || bv === 'Automatique' || bv === 'Auto' || bv === 'Automatic' ){
@@ -87,29 +79,60 @@ export function Rent_2({title, img, prix, essence, bv, ville}){
         }
     }
 
+    const Places = () => {
+        if(places < 9){
+            return `0${places}`
+        } else {
+            return places
+        }
+    }
+
+    const Porte = () => {
+        if(portes < 9){
+            return `0${places}`
+        } else {
+            return places
+        }
+    }
+
+    const Essence = () => {
+        if(essence){
+            return 'Essence'
+        } else {
+            return 'Diesel'
+        }
+    }
+
+    const Clim = () => {
+        if(clim){
+            return 'Climatisé'
+        } else {
+            return 'Non-Climatisé'
+        }
+    }
+
     let x = parseInt(prix)
     const Prix =  new Intl.NumberFormat('fr-FR', { style : 'currency', currency : 'XAF'}).format(x)
-
     return (
         <div  className = 'rentItem'>
                 <a>
                     <div className = 'grid-2-bis'>
                         <div >
                             <div className = 'label'>
-                                <p>Toyota Corolla 2019</p>
-                                <p className = 'prix'>35.000 XAF / jour</p>
+                                <p>{title}</p>
+                                <p className = 'prix'>{Prix} / Jour</p>
                             </div>
                             <div className ='desc grid-2'>
-                                <Item_detail_2 img = '/icons8-user-50.png' text = '05 places'/>
-                                <Item_detail_2 img = '/icons8-gas-station-50.png' text= 'essence' />
-                                <Item_detail_2 img = '/icons8-gearbox_black.png' text= 'Manuel' />
-                                <Item_detail_2 img = '/icons8-fresh-air-50.png' text= 'essence' />
-                                <p>N° portière : 05 portières </p>
+                                <Item_detail_2 img = '/icons8-user-50.png' text = {Places()}/>
+                                <Item_detail_2 img = '/icons8-gas-station-50.png' text= {Essence()} />
+                                <Item_detail_2 img = '/icons8-gearbox_black.png' text= {bv} />
+                                <Item_detail_2 img = '/icons8-fresh-air-50.png' text= {Clim()} />
+                                <p>N° portière : {Porte()} portières </p>
                             </div>
                         </div>
                         <div className = 'image'>
                             <div className = 'img'>
-                                <img src ='/font.jpeg' />
+                                <img src ={img} />
                             </div>
                             
                         </div>

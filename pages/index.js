@@ -14,7 +14,7 @@ export default function Home({page}) {
         {/* <meta name = 'viewport' content = 'width=device-width, initial-scale=0.5' /> */}
       </Head>
       <main>
-        <Diapo bgImg = {`/bgImg_2.jpg`} texte = 'Louer avec facilité un véhicule au Cameroun' subtitle = 'Louez un véhicule sur V909 pour tous vos déplacements dans les villes Camerounaises' />
+        <Diapo bgImg = {`/bgIMg_2.jpg`} texte = 'Louer avec facilité un véhicule au Cameroun' subtitle = 'Louez un véhicule sur V909 pour tous vos déplacements dans les villes Camerounaises' />
         <Ville />
         <LocationClass data = {page.edges} />
       </main>

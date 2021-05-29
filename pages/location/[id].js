@@ -6,9 +6,17 @@ import Link from 'next/link'
 import config from "../../config";
 import { gql } from "graphql-request";
 
-export default function Achat({page}){
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
 
-      console.log(page)
+import {useState, useEffect} from 'react'
+
+export default function Achat({item}){
+    let d = new Date()
+    const [date, setDate] = useState(d)
+    console.log(date)
+
+    let data = item.page
 
     return(
         <Layout>
@@ -17,14 +25,35 @@ export default function Achat({page}){
                     <p>COVID-19 alert: travel requiement are changing rapidly, including need for pre-travel COVID-19 testing and quarantine on arrival.</p>
                 </div>
                 <div className='LocationVue'>
-                <Rent_2 />
+                <Rent_2 title = {`${data.name} ${data.annee}`} 
+                    prix = {data.prix_Location} 
+                    bv = {data.bv} 
+                    essence = {data.essence} 
+                    img = {data.genericImg.url}
+                    ville = {data.ville} 
+                    clim = {data.clim}
+                    places = {data.places}
+                    portes = {data.portes} />
                 <div className = 'infos'>
                     <form>
                         <div className = 'date'>
-                            <label>Période de location</label>
+                            <label style={{width:'100%', textAlign:'center', display:'block'}}>Période de location</label>
                             <div className = 'periode'>
-                            <input type='date' id='debut' name = 'periode'/>
-                            <input type='date' id='fin' name = 'periode'/>
+                                {/* <input type='date' id='debut' name = 'periode'  value = {date}  />
+                                <input type='date' id='fin' name = 'periode'/> */}
+
+                                <div style = {{display:'flex', alignItems:'center', width : '100%', justifyContent:'center', padding:'12px 0', flexDirection:'column'}}>
+                                    <div style={{width : '90%', padding : '12px', backgroundColor:'#0F0', display:'flex', alignItems:'center', justifyContent : 'center' }}>
+                                        <div style={{fontSize:16, fontWeight:'500'}}>
+                                            calendrier
+                                        </div>
+                                    </div>
+                                    <div style={{width : '90%', padding : '12px 0 0', display:'flex', alignItems:'center', justifyContent : 'center' }}>
+                                        <div style={{fontSize:13, fontWeight:'500', textAlign:'center', color:'white'}}>
+                                            Cliquez sur le bouton "calendrier", pour choisir votre periode de location
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -76,6 +105,13 @@ export default function Achat({page}){
                     </div>
                 </div>
             </Container>
+            <div style ={{position:'fixed', width:'100%', height: '100%', top:0, left:0, backgroundColor:'#0002', display : 'flex',alignItems:'center', justifyContent:'center', backdropFilter : 'blur(5px)'}}>
+                <Calendar 
+                    selectRange = {true}
+                    onChange = {setDate()}
+                    value = {date}
+                />
+            </div>
         </Layout>
     )
 }
@@ -91,7 +127,6 @@ export const getStaticPaths = async () => {
     `)
 
     let data = page.page
-    // console.log('pages ', data.length);
     return {
         paths : data.map(el => ({params : {id : el.id}})),
         fallback : false,
@@ -99,7 +134,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}) => {
-    let page = await config.request(gql`
+    let item = await config.request(gql`
         query Car($id : ID!){
             page: voiture(where : {id :$id}){
                 bv
@@ -114,19 +149,17 @@ export const getStaticProps = async ({params}) => {
                 ville
                 id
                 genericImg {
-                mimeType
-                url
-                size
+                    mimeType
+                    url
+                    size
                 }
             }
         }
     `, {id : params.id})
-
-    console.log(page)
     
     return {
         props : {
-            page,
+            item,
         }
     }
 }
